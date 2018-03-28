@@ -1,0 +1,387 @@
+<html>
+<head>
+	<title>神魔之塔大聖減傷online</title>
+	<meta charset="UTF-8">
+	<style>
+		tr.blue{background-color:#BBFFEE; color:#0000FF;}
+		tr.red{background-color:#FFCCCC; color:#FF0000;}
+		tr.orange{background-color:#FFEE99; color:#FF8800;}
+		tr.green{background-color:#CCFF99; color:#008800;}
+		tr.yellow{background-color:#FFFFBB; color:#FFBB00;}
+		tr.purple{background-color:#F0BBFF; color:#770077;}
+		tr.burgundy{background-color:#FFCCCC; color:#CC0000;}
+		tr.closed{background-color:#DDDDDD; color:#AAAAAA;}
+		tr.none{background-color:#FFFFFF; color:#000000;}
+		
+		#btn{
+			margin: 0px;
+            -webkit-transition: 0.1s linear;
+            -webkit-transition-property: -webkit-transform margin;}
+		#btn:hover{
+            margin: 0px;
+            -webkit-transform: scale(1.1);
+		}
+	</style>
+	
+</head>
+	
+<style>
+		body{}
+</style>
+
+
+<body>
+<div style="background-image:url(./img/background.png);position:fixed;top:0;left:0;width:100%;height:100%;"></div>
+		
+<div style="position:absolute;top:50px;left:0px;width:100%">
+	<table align="center">
+		<tr>
+			<td align="left" style="font-weight:bold;font-family:微軟正黑體;height:40px;font-size:70px;color:#FFFF33; cursor:default;">
+				<img id="logo" align="center" src="./img/dasheng_1.png" height=120 width=120 style="visibility:visible;cursor:hand;" onclick="logoChange();"/>
+				<img align="center" src="./img/tosmark.png" width=350 style="linear-gradient:visibility:visible;" />
+				技能說明
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div style="position:absolute;top:240px;left:0px;width:100%">
+	<table style="font-family:微軟正黑體; font-weight:bold; width:100%; height:20px; background-color:#fff; color:#000; font-size:25pt; cursor:default;">
+		<tr class="none">
+			<td align="center" style="border:2px #000 solid;color:#000000;width:32%">技能名稱</td>
+			<td align="center" style="border:2px #000 solid;color:#000000;width:68%">說明</td>
+		</tr>
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#FF0000; background-color:#FFEEEE;">
+				&nbsp;&nbsp;無效類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="red">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/phantom.png" height=60 width=60  alt="無視減傷" title="無視減傷"/>&nbsp;無視減傷
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				任意減傷效果無效，所以大聖的減傷效果也被無效化，所填入的攻擊力即為對本身造成的傷害值。
+			</td>
+		</tr>
+		
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#FF8800; background-color:#FFFFBB;">
+				&nbsp;&nbsp;連擊類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="orange">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/double_strike.png" height=60 width=60  alt="二連擊" title="二連擊"/>&nbsp;二連擊
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				一回合內敵人攻擊兩次。由於大聖減傷是依照血量比例變動減傷效率，所以第二下攻擊的減傷效率會比第一下低。
+			</td>
+		</tr>
+		<tr class="orange">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/triple_strike.png" height=60 width=60  alt="三連擊" title="三連擊"/>&nbsp;三連擊
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				一回合內敵人攻擊三次。由於大聖減傷是依照血量比例變動減傷效率，所以第二下攻擊的減傷效率會比第一下低、第三下攻擊的減傷效率又會比第二下低。
+			</td>
+		</tr>
+		
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#00AA00; background-color:#EEFFBB;">
+				&nbsp;&nbsp;中毒類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒7.5%" title="中毒7.5%"/>&nbsp;中毒7.5%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的7.5%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒10%" title="中毒10%"/>&nbsp;中毒10%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的10%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒20%" title="中毒20%"/>&nbsp;中毒20%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的20%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒30%" title="中毒30%"/>&nbsp;中毒30%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的30%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒40%" title="中毒40%"/>&nbsp;中毒40%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的40%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒50%" title="中毒50%"/>&nbsp;中毒50%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的50%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒60%" title="中毒60%"/>&nbsp;中毒60%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的60%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒70%" title="中毒70%"/>&nbsp;中毒70%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的70%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒80%" title="中毒80%"/>&nbsp;中毒80%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的80%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		<tr class="green">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/poison.png" height=60 width=60  alt="中毒90%" title="中毒90%"/>&nbsp;中毒90%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人每回合會扣除總血量的90%，此傷害無法由大聖減傷。在攻擊回合時會先中毒再發動攻擊，所以減傷效率會先因中毒而有所下降。
+			</td>
+		</tr>
+		
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#0000FF; background-color:#DDFFFF;">
+				&nbsp;&nbsp;固定扣血類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_30.png" height=60 width=60  alt="固定扣血30%" title="固定扣血30%"/>&nbsp;固定扣血30%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的30%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_40.png" height=60 width=60  alt="固定扣血40%" title="固定扣血40%"/>&nbsp;固定扣血40%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的40%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_50.png" height=60 width=60  alt="固定扣血50%" title="固定扣血50%"/>&nbsp;固定扣血50%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的50%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_70.png" height=60 width=60  alt="固定扣血70%" title="固定扣血70%"/>&nbsp;固定扣血70%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的70%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_80.png" height=60 width=60  alt="固定扣血80%" title="固定扣血80%"/>&nbsp;固定扣血80%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的80%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_90.png" height=60 width=60  alt="固定扣血90%" title="固定扣血90%"/>&nbsp;固定扣血90%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的90%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="blue">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_100.png" height=60 width=60  alt="固定扣血100%" title="固定扣血100%"/>&nbsp;固定扣血100%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的100%，此傷害無法由大聖減傷，被打中就是即死。
+			</td>
+		</tr>
+		
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#770077; background-color:#EADDFF;">
+				&nbsp;&nbsp;可減傷扣血類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="purple">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_30.png" height=60 width=60  alt="固定扣血30%．隊長" title="固定扣血30%．隊長"/>&nbsp;固定扣血30%．隊長
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的30×n%，n為大聖減傷效率。
+			</td>
+		</tr>
+		<tr class="purple">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_40.png" height=60 width=60  alt="固定扣血40%．隊長" title="固定扣血40%．隊長"/>&nbsp;固定扣血40%．隊長
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的40×n%，n為大聖減傷效率。
+			</td>
+		</tr>
+		<tr class="purple">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_50.png" height=60 width=60  alt="固定扣血50%．隊長" title="固定扣血50%．隊長"/>&nbsp;固定扣血50%．隊長
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的50×n%，n為大聖減傷效率。
+			</td>
+		</tr>
+		<tr class="purple">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_70.png" height=60 width=60  alt="固定扣血70%．隊長" title="固定扣血70%．隊長"/>&nbsp;固定扣血70%．隊長
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的70×n%，n為大聖減傷效率。
+			</td>
+		</tr>
+		<tr class="purple">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_80.png" height=60 width=60  alt="固定扣血80%．隊長" title="固定扣血80%．隊長"/>&nbsp;固定扣血80%．隊長
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的80×n%，n為大聖減傷效率。
+			</td>
+		</tr>
+		<tr class="purple">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/hp_reduction_90.png" height=60 width=60  alt="固定扣血90%．隊長" title="固定扣血90%．隊長"/>&nbsp;固定扣血90%．隊長
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊時會扣除總血量的90×n%，n為大聖減傷效率。
+			</td>
+		</tr>
+		
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#CC0000; background-color:#FFEEEE;">
+				&nbsp;&nbsp;攻後扣血類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="burgundy">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/post_reduction.png" height=60 width=60  alt="攻後扣血10%" title="攻後扣血10%"/>&nbsp;攻後扣血10%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊後會額外扣除總血量的10%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="burgundy">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/post_reduction.png" height=60 width=60  alt="攻後扣血20%" title="攻後扣血20%"/>&nbsp;攻後扣血20%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊後會額外扣除總血量的20%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="burgundy">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/post_reduction.png" height=60 width=60  alt="攻後扣血25%" title="攻後扣血25%"/>&nbsp;攻後扣血25%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊後會額外扣除總血量的25%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		<tr class="burgundy">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/post_reduction.png" height=60 width=60  alt="攻後扣血40%" title="攻後扣血40%"/>&nbsp;攻後扣血40%
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人發動攻擊後會額外扣除總血量的40%，此傷害無法由大聖減傷。
+			</td>
+		</tr>
+		
+		<tr class="none">
+			<td colspan=2 align="left" style="border:2px #000 solid; color:#FFBB00; background-color:#FFFFBB;">
+				&nbsp;&nbsp;倍攻類&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr class="yellow">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/trojan.png" height=60 width=60  alt="狂暴20倍(觸發後)" title="狂暴20倍(觸發後)"/>&nbsp;狂暴20倍<font style="font-size:25px;">(觸發後)</font>
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				觸發狂暴後，敵人攻擊力提升至填入攻擊力的20倍並發動連擊。<br>
+				<img align="center" src="./img/warning.png" height=30 width=30 />
+				<font style="color:#FF0000;font-size:25px;">注意：本技能之計算已包含敵人的連擊。</font>
+			</td>
+		</tr>
+		<tr class="yellow">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/trojan.png" height=60 width=60  alt="殺伴狂暴50倍(觸發後)" title="殺伴狂暴50倍(觸發後)"/>&nbsp;殺伴狂暴50倍<font style="font-size:25px;">(觸發後)</font>
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				觸發狂暴後，敵人攻擊力提升至填入攻擊力的50倍。
+			</td>
+		</tr>
+		<tr class="yellow">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/trojan.png" height=60 width=60  alt="士氣高昂2倍" title="士氣高昂2倍"/>&nbsp;士氣高昂2倍
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人攻擊力提升至填入攻擊力的2倍。<br>
+				<img align="center" src="./img/warning.png" height=30 width=30 />
+				<font style="color:#FF0000;font-size:25px;">注意：此處的士氣高昂與遊戲內有所不同。此處填寫的敵人為「被提升倍率的敵人」，並非「提升他人倍率的敵人」。</font>
+			</td>
+		</tr>
+		<tr class="yellow">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/trojan.png" height=60 width=60  alt="士氣高昂3倍" title="士氣高昂3倍"/>&nbsp;士氣高昂3倍
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人攻擊力提升至填入攻擊力的3倍。<br>
+				<img align="center" src="./img/warning.png" height=30 width=30 />
+				<font style="color:#FF0000;font-size:25px;">注意：此處的士氣高昂與遊戲內有所不同。此處填寫的敵人為「被提升倍率的敵人」，並非「提升他人倍率的敵人」。</font>
+			</td>
+		</tr>
+		<tr class="yellow">
+			<td align="left" style="border:2px #000 solid;">&nbsp;
+				<img align="center" src="./img/attack_10.png" height=60 width=60  alt="增攻10倍" title="增攻10倍"/>&nbsp;增攻10倍
+			</td>
+			<td align="left" style="border:2px #000 solid;">
+				敵人攻擊力提升至填入攻擊力的10倍。<br>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript" src="./reduction_setting.js"></script>
+</body>
+
+</html>
