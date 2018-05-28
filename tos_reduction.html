@@ -68,8 +68,8 @@
 <body>
 <div style="background-image:url(./img/background.png);position:fixed;top:0;left:0;width:100%;height:100%;"></div>
 <marquee direction=left behavior=scroll  scrollamount=10 scrolldelay=20 style="font-family:微軟正黑體; font-size:25px; color:#FFFF00; cursor:default;">
-	<b><font style="color:#FFAA33;">上次更新：</font>2018/5/26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<font style="color:#FFAA33;">更新內容：</font>新增地獄級關卡-「異瞳醫師」</b>
+	<b><font style="color:#FFAA33;">上次更新：</font>2018/5/28 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<font style="color:#FFAA33;">更新內容：</font>新增單雙週副本-「蟻王三護衛．孟徒徒尤匹」</b>
 </marquee>
 
 
@@ -1289,6 +1289,15 @@
 				此血量能撐住R2-2敵人的攻擊與連續反擊。
 			</td>
 		</tr>
+        <tr class="dark">
+			<td align="left" style="border:2px #000 solid;" title="">&nbsp;
+				<img align="center" src="./img/ultimate_110.png" height=80 width=80 title="庫洛洛" onerror="this.onerror=null;NullSrcReplace(this);"/>&nbsp;&nbsp;地獄級：旅團的大腦
+			</td>
+			<td align="center" style="border:2px #000 solid;"></td>
+			<td align="left" style="border:2px #000 solid;">
+				
+			</td>
+		</tr>
 		</table>
 		
 		<table id="ul3_attr" align="center" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:100px; font-size:24pt; display:none;">
@@ -1796,62 +1805,96 @@
 	
 		<table align="center" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:100px; font-size:24pt;">
 			<tr style="cursor:hand;">
+                <td class="btnw" id="sw34" align="center" width="16%" style="" onClick="seriesWeek(34);">王的護衛</td>
                 <td class="btnw" id="sw33" align="center" width="16%" style="" onClick="seriesWeek(33);">畫緣相遇</td>
                 <td class="btnw" id="sw32" align="center" width="16%" style="" onClick="seriesWeek(32);">機械神兵</td>
                 <td class="btnw" id="sw31" align="center" width="16%" style="" onClick="seriesWeek(31);">追擊始源</td>
                 <td class="btnw" id="sw30" align="center" width="16%" style="" onClick="seriesWeek(30);">魔境入侵者</td>
                 <td class="btnw" id="sw29" align="center" width="16%" style="" onClick="seriesWeek(29);">奇想典故</td>
-                <td class="btnw" id="sw28" align="center" width="16%" style="" onClick="seriesWeek(28);">大蛇的眷屬</td>
 			</tr>
 		</table>
 		<table align="center" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:100px; font-size:24pt;">
 			<tr style="cursor:hand;">
+                <td class="btnw" id="sw28" align="center" width="16%" style="" onClick="seriesWeek(28);">大蛇的眷屬</td>
                 <td class="btnw" id="sw27" align="center" width="16%" style="" onClick="seriesWeek(27);">逐願邪星</td>
 				<td class="btnw" id="sw26" align="center" width="16%" style="" onClick="seriesWeek(26);">三教頂峰</td>
 				<td class="btnw" id="sw25" align="center" width="16%" style="" onClick="seriesWeek(25);">粉碎亂鬥</td>
 				<td class="btnw" id="sw24" align="center" width="16%" style="" onClick="seriesWeek(24);">高手隱士</td>
 				<td class="btnw" id="sw23" align="center" width="16%" style="" onClick="seriesWeek(23);">科學少女</td>
-				<td class="btnw" id="sw22" align="center" width="16%" style="" onClick="seriesWeek(22);">死物附靈</td>
 			</tr>
 		</table>
 		<table align="center" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:100px; font-size:24pt;">
 			<tr style="cursor:hand;">
+				<td class="btnw" id="sw22" align="center" width="16%" style="" onClick="seriesWeek(22);">死物附靈</td>
 				<td class="btnw" id="sw21" align="center" width="16%" style="" onClick="seriesWeek(21);">獸伴</td>
 				<td class="btnw" id="sw20" align="center" width="16%" style="" onClick="seriesWeek(20);">海上霸者</td>
 				<td class="btnw" id="sw19" align="center" width="16%" style="" onClick="seriesWeek(19);">都市傳說</td>
 				<td class="btnw" id="sw18" align="center" width="16%" style="" onClick="seriesWeek(18);">魔變凶龍</td>
 				<td class="btnw" id="sw17" align="center" width="16%" style="" onClick="seriesWeek(17);">列王之爭</td>
-				<td class="btnw" id="sw16" align="center" width="16%" style="" onClick="seriesWeek(16);">死亡騎士</td>
 			</tr>
 		</table>
 		<table align="center" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:100px; font-size:24pt;">
 			<tr style="cursor:hand;">
+				<td class="btnw" id="sw16" align="center" width="16%" style="" onClick="seriesWeek(16);">死亡騎士</td>
 				<td class="btnw" id="sw15" align="center" width="16%" style="" onClick="seriesWeek(15);">北域巨人</td>
 				<td class="btnw" id="sw14" align="center" width="16%" style="" onClick="seriesWeek(14);">碎羽墮落者</td>
 				<td class="btnw" id="sw13" align="center" width="16%" style="" onClick="seriesWeek(13);">仙劍列傳</td>
 				<td class="btnw" id="sw12" align="center" width="16%" style="" onClick="seriesWeek(12);">童話仙蹤</td>
 				<td class="btnw" id="sw11" align="center" width="16%" style="" onClick="seriesWeek(11);">怪物彈珠</td>
-				<td class="btnw" id="sw10" align="center" width="16%" style="" onClick="seriesWeek(10);">巴比倫神明</td>
 			</tr>
 		</table>
 		<table align="left" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:100px; font-size:24pt;">
 			<tr style="cursor:hand;">
+				<td class="btnw" id="sw10" align="center" width="16%" style="" onClick="seriesWeek(10);">巴比倫神明</td>
 				<td class="btnw" id="sw9" align="center" width="16%" style="" onClick="seriesWeek(9);">撒旦魔將</td>
 				<td class="btnw" id="sw8" align="center" width="16%" style="" onClick="seriesWeek(8);">星詠之歌姬</td>
 				<td class="btnw" id="sw7" align="center" width="16%" style="" onClick="seriesWeek(7);">百鬼夜行</td>
 				<td class="btnw" id="sw6" align="center" width="16%" style="" onClick="seriesWeek(6);">修驗道式神</td>
 				<td class="btnw" id="sw5" align="center" width="16%" style="" onClick="seriesWeek(5);">要塞兵團</td>
-				<td class="btnw" id="sw4" align="center" width="16%" style="" onClick="seriesWeek(4);">遠古的恐懼</td>
 			</tr>
 		</table>
-        <table align="left" style="font-family:微軟正黑體; font-weight:bold; width:50%; height:100px; font-size:24pt;">
+        <table align="left" style="font-family:微軟正黑體; font-weight:bold; width:66.66%; height:100px; font-size:24pt;">
 			<tr style="cursor:hand;">
+				<td class="btnw" id="sw4" align="center" width="16%" style="" onClick="seriesWeek(4);">遠古的恐懼</td>
 				<td class="btnw" id="sw3" align="center" width="16%" style="" onClick="seriesWeek(3);">魔境住民</td>
 				<td class="btnw" id="sw2" align="center" width="16%" style="" onClick="seriesWeek(2);">七原罪</td>
 				<td class="btnw" id="sw1" align="center" width="16%" style="" onClick="seriesWeek(1);">貓公爵傭兵團</td>
 			</tr>
 		</table>
 		<br><br><br><br><br><br>
+        
+        <table id="w34" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:20px; background-color:#fff; color:#000; font-size:25pt; cursor:default; display:none;">
+		<tr>
+			<td align="center" style="border:2px #000 solid;width:41%;">關卡</td>
+			<td align="center" style="border:2px #000 solid;width:10%;font-size:22pt;">建議血量</td>
+			<td align="center" style="border:2px #000 solid;">備註</td>
+		</tr>
+		<tr class="none">
+			<td colspan=3 align="left" style="border:2px #000 solid;">
+				&nbsp;&nbsp;王的護衛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+        <tr class="fire">
+			<td align="left" style="border:2px #000 solid;" title="極具威力的爆發">&nbsp;
+				<img align="center" src="./img/hunter_1.png" height=80 width=80 title="孟徒徒尤匹" onerror="this.onerror=null;NullSrcReplace(this);"/>&nbsp;&nbsp;<font style="font-size:20pt;">蟻王三護衛．孟徒徒尤匹</font> <img align="center" src="./img/extra_logo.png" width=80 alt="EXTRA" title="EXTRA"/>
+			</td>
+			<td align="center" style="border:2px #000 solid;">10532</td>
+			<td align="left" style="border:2px #000 solid;">
+				R8有越戰越強，請拿捏好敵方血量再爆發。<br>
+                此血量剛好能撐住R7敵人的六下連擊。
+			</td>
+		</tr>
+		<tr class="fire">
+			<td align="left" style="border:2px #000 solid;" title="最強型態">&nbsp;
+				<img align="center" src="./img/hunter_1.png" height=80 width=80 title="孟徒徒尤匹" onerror="this.onerror=null;NullSrcReplace(this);"/>&nbsp;&nbsp;<font style="font-size:20pt;">蟻王三護衛．孟徒徒尤匹</font> <img align="center" src="./img/elite_logo.png" width=80 alt="精英" title="精英"/>
+			</td>
+			<td align="center" style="border:2px #000 solid;">15612</td>
+			<td align="left" style="border:2px #000 solid;">
+				R8有越戰越強，請拿捏好敵方血量再爆發。<br>
+                此血量剛好能撐住R7敵人的七下連擊。
+			</td>
+		</tr>
+		</table>
         
         <table id="w33" style="font-family:微軟正黑體; font-weight:bold; width:100%; height:20px; background-color:#fff; color:#000; font-size:25pt; cursor:default; display:none;">
 		<tr>
